@@ -19,7 +19,7 @@
 #You can change the Guacamole source file download link here.
 #Check https://guacamole.apache.org/releases/ for the latest stable version.
 
-GUACAMOLE_DOWNLOAD_LINK="https://mirrors.ocf.berkeley.edu/apache/guacamole/1.5.3/source/guacamole-server-1.5.3.tar.gz"
+GUACAMOLE_DOWNLOAD_LINK="https://r.qunercloud.com/https://mirrors.ocf.berkeley.edu/apache/guacamole/1.5.3/source/guacamole-server-1.5.3.tar.gz"
 GUACAMOLE_VERSION="1.5.3"
 
 #By default, this script only works on Ubuntu 18/20, Debian 10, and CentOS 7/8.
