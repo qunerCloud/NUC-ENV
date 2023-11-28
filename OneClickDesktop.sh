@@ -592,7 +592,7 @@ function install_rdp
 {
 	echo 
 	echo "Starting to install desktop, browser, and XRDP server..."
-	if [ "$OS" = "UBUNTU18" ] || [ "$OS" = "UBUNTU20" ] ; then
+	if [ "$OS" = "UBUNTU22" ] || [ "$OS" = "UBUNTU20" ] ; then
 		say @B"Please note that if you are asked to configure LightDM during this step, simply press Enter." yellow
 		echo 
 		echo "Press Enter to continue."
@@ -608,7 +608,7 @@ function install_rdp
 		yum -y install xorgxrdp
 		echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 	else
-		apt-get install xfce4 xfce4-goodies firefox xrdp -y
+		sudo apt-get install xfce4 xfce4-goodies firefox xrdp -y
 	fi
 	say @B"Desktop, browser, and XRDP server successfully installed." green
 	echo "Starting to configure XRDP server..."
