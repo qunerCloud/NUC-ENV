@@ -600,7 +600,7 @@ function install_rdp
 		echo
 	fi
 	if [ "$OS" = "DEBIAN10" ] ; then
-		sudo apt-get install xfce4 xfce4-goodies firefox-esr xrdp -y
+		sudo apt-get install xfce4 xfce4-goodies xrdp -y
 	elif [ "$OS" = "CENTOS8" ] || [ "$OS" = "CENTOS7" ] ; then
 		yum -y groupinstall "Server with GUI"
 		yum -y install firefox
@@ -608,7 +608,7 @@ function install_rdp
 		yum -y install xorgxrdp
 		echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 	else
-		sudo apt-get install xfce4 xfce4-goodies firefox xrdp -y
+		sudo apt-get install xfce4 xfce4-goodies xrdp -y
 	fi
 	say @B"Desktop, browser, and XRDP server successfully installed." green
 	echo "Starting to configure XRDP server..."
