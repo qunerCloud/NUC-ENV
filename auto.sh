@@ -51,10 +51,9 @@ echo "gmaster ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers \
 && cd /tmp \
 && sudo wget https://raw.githubusercontent.com/qunerCloud/NUC-ENV/main/OneClickDesktop.sh \
 && sudo chmod +x OneClickDesktop.sh \
+&& sudo su \
 && echo -e "Y\ngmaster\n35086020\n1\n2\nn" | sudo ./OneClickDesktop.sh \
-&& while ps -p $! > /dev/null; do sleep 1; done \
 && sudo apt install nginx openssl -y \
-&& while dpkg -l | grep -qw nginx; do sleep 1; done \
 && sudo mkdir -p /etc/nginx/ssl \
 && sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/nginx/ssl/selfsigned.key -out /etc/nginx/ssl/selfsigned.crt -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=control.qunercloud.com" \
 && echo -e "server {\n listen 443 ssl;\n server_name _;\n ssl_certificate /etc/nginx/ssl/selfsigned.crt;\n ssl_certificate_key /etc/nginx/ssl/selfsigned.key;\n location / {\n proxy_pass http://localhost:8080;\n proxy_http_version 1.1;\n proxy_set_header Upgrade \$http_upgrade;\n proxy_set_header Connection 'upgrade';\n proxy_set_header Host \$host;\n proxy_cache_bypass \$http_upgrade;\n }\n location /guacamole/ {\n proxy_pass http://localhost:8080/guacamole/;\n proxy_http_version 1.1;\n proxy_set_header Upgrade \$http_upgrade;\n proxy_set_header Connection 'upgrade';\n proxy_set_header Host \$host;\n proxy_cache_bypass \$http_upgrade;\n }\n}\n server {\n listen 80;\n server_name _;\n return 301 https://\$host/guacamole/\$request_uri;\n}" | sudo tee /etc/nginx/sites-available/default \
