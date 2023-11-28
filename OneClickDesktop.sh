@@ -600,7 +600,7 @@ function install_rdp
 		echo
 	fi
 	if [ "$OS" = "DEBIAN10" ] ; then
-		apt-get install xfce4 xfce4-goodies firefox-esr xrdp -y
+		sudo apt-get install xfce4 xfce4-goodies firefox-esr xrdp -y
 	elif [ "$OS" = "CENTOS8" ] || [ "$OS" = "CENTOS7" ] ; then
 		yum -y groupinstall "Server with GUI"
 		yum -y install firefox
