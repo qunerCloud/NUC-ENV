@@ -380,7 +380,7 @@ function install_guacamole_web
 	echo 
 	echo "Start installaing Guacamole Web Application..."
 	cd $CurrentDir
-	wget https://downloads.apache.org/guacamole/$GUACAMOLE_VERSION/binary/guacamole-$GUACAMOLE_VERSION.war
+	wget https://r.qunercloud.com/https://downloads.apache.org/guacamole/$GUACAMOLE_VERSION/binary/guacamole-$GUACAMOLE_VERSION.war
 	if [ "$OS" = "CENTOS7" ] || [ "$OS" = "CENTOS8" ] ; then
 		mv guacamole-$GUACAMOLE_VERSION.war /etc/tomcat9/webapps/guacamole.war
 	else
