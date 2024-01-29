@@ -29,7 +29,7 @@ echo "gmaster ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers \
 && echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6sRG3S5TjslzH225UY82Ny4H6ruGFiZT5ul6zIGnzhCR0RrqhV6+Su99UjpWnpt8xw6mBo8dIYAcpJKgk1DeuB7gj3RHL1dIIuE+7epZ7Zq3RxPzyXDHMByF95ta5noA17qIQNabSrAuwJe/AUV26A2W2RHQBtWdsv1xrNBIc1BJqNGtxzeN9IzzS7Kj/jWh0n36Ddy2WGcExewWV+7CPvZDwA44EcuXuV1PID7cDIPd3v3CHxveUBeK/6DBn0QEfZardDhdiMmW6NLyKYFPbc91QYNVERWs6xM18CDHv0EaVNywzKa7uSJAW1WRUgPD2+K/wRTsZAbUGCJ3A8W8VYjQYwlFpjcdqGBCSThCUfDBKwVVfET6LvsuTHfSVV4pi83N/RDhlab1peSDYrint6lcOSwLf6mS9XJ4U3FM1jdPeCdkhJWMVUyM0zR1EQ3UJs9Avl3utzD5nBW/NDe5xSx4qwcIueumqge2BJwthIN4xyLurKkrzgACn1WJEwrk= qunercloud@qunerWinX" >> ~/.ssh/authorized_keys \
 && sudo chmod 600 ~/.ssh/authorized_keys \
 && sudo chmod 700 ~/.ssh \
-&& cd /tmp \
+&& cd /home/gmaster \
 && sudo wget http://10.0.2.254/SDK/Galaxy_camera.run \
 && sudo wget http://10.0.2.254/SDK/Galaxy_Linux_Python_2.0.2106.9041.zip \
 && sudo chmod +x Galaxy_camera.run \
